@@ -3,6 +3,10 @@
 #define SOL_1_PIN 2
 #define SOL_2_PIN 3
 #define SOL_3_PIN 4
+#define SOL_4_PIN 5
+#define SOL_5_PIN 6
+#define SOL_6_PIN 7
+#define SOL_7_PIN 8
 #define DEBUG 0
 
 int sol_wait = 6;
@@ -31,6 +35,11 @@ void setup()
   pinMode(SOL_1_PIN, OUTPUT);
   pinMode(SOL_2_PIN, OUTPUT);
   pinMode(SOL_3_PIN, OUTPUT);
+  pinMode(SOL_4_PIN, OUTPUT);
+  pinMode(SOL_5_PIN, OUTPUT);
+  pinMode(SOL_6_PIN, OUTPUT);
+  pinMode(SOL_7_PIN, OUTPUT);
+
 }
 
 // First parameter is the event type (0x0B = control change).
@@ -66,19 +75,30 @@ void loop()
 
       int header = rx.header;
 
-      if (header == 11 && rx.byte2 == 1)
-      {
-        sol_wait = rx.byte3;
-      }
-
       if (header == 9)
       {
 
         int note = rx.byte2;
         int velocity = rx.byte3;
 
+        if (velocity > 100)
+        {
+          sol_wait = 8;
+        }
+        else if (velocity > 80)
+        {
+          sol_wait = 7;
+        }
+        else if (velocity > 50)
+        {
+          sol_wait = 5;
+        }
+
         if (DEBUG)
         {
+          Serial.print("sol wait");
+          Serial.println(sol_wait, DEC);
+
           Serial.print("note: ");
           Serial.println(note);
           Serial.print("velocity: ");
@@ -109,12 +129,56 @@ void loop()
 
         if (note == 64)
         {
-          Serial.println("sol 2");
+          Serial.println("sol 3");
           if (velocity > 0)
           {
             digitalWrite(SOL_3_PIN, HIGH);
             delay(sol_wait);
             digitalWrite(SOL_3_PIN, LOW);
+          }
+        }
+
+        if (note == 65)
+        {
+          Serial.println("sol 4");
+          if (velocity > 0)
+          {
+            digitalWrite(SOL_4_PIN, HIGH);
+            delay(sol_wait);
+            digitalWrite(SOL_4_PIN, LOW);
+          }
+        }
+
+        if (note == 67)
+        {
+          Serial.println("sol 5");
+          if (velocity > 0)
+          {
+            digitalWrite(SOL_5_PIN, HIGH);
+            delay(sol_wait);
+            digitalWrite(SOL_5_PIN, LOW);
+          }
+        }
+
+        if (note == 69)
+        {
+          Serial.println("sol 6");
+          if (velocity > 0)
+          {
+            digitalWrite(SOL_6_PIN, HIGH);
+            delay(sol_wait);
+            digitalWrite(SOL_6_PIN, LOW);
+          }
+        }
+
+        if (note == 71)
+        {
+          Serial.println("sol 7");
+          if (velocity > 0)
+          {
+            digitalWrite(SOL_7_PIN, HIGH);
+            delay(sol_wait);
+            digitalWrite(SOL_7_PIN, LOW);
           }
         }
       }
