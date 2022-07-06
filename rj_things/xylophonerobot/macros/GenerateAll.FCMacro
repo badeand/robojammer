@@ -1,23 +1,20 @@
 
 
 
-def ExportDivider():
-	Gui.Selection.clearSelection()
-	Gui.Selection.addSelection('xylophonerobot','Shape2DView')
-	__objs__=[]
-	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Shape2DView"))
-	import importDXF
-	importDXF.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot/output/divider.dxf")
-	del __objs__
-
-
-def ExportBackplate():
+def ExportDXF(shape, filename):
 	Gui.Selection.clearSelection()
 	__objs__=[]
-	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Shape2DView001"))
+	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject(shape))
 	import importDXF
-	importDXF.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot/output/backplate.dxf")
+	importDXF.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot/output/"+filename+".dxf")
 	del __objs__
 
-ExportDivider()
-ExportBackplate()
+ExportDXF("Shape2DView", "backplate")
+ExportDXF("Shape2DView001", "divider")
+ExportDXF("Shape2DView002", "bottom")
+ExportDXF("Shape2DView003", "top")
+ExportDXF("Shape2DView004", "frontplate")
+
+
+
+

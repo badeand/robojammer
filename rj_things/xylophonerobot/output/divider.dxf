@@ -227,7 +227,7 @@ TABLE
   2
 LAYER
   5
-A15
+A20
 330
 0
 100
@@ -237,9 +237,9 @@ AcDbSymbolTable
   0
 LAYER
   5
-A16
+A21
 330
-A15
+A20
 100
 AcDbSymbolTableRecord
 100
@@ -255,9 +255,9 @@ CONTINUOUS
   0
 LAYER
   5
-A17
+A22
 330
-A15
+A20
 100
 AcDbSymbolTableRecord
 100
@@ -273,15 +273,15 @@ CONTINUOUS
   0
 LAYER
   5
-A18
+A23
 330
-A15
+A20
 100
 AcDbSymbolTableRecord
 100
 AcDbLayerTableRecord
   2
-Shape2DView
+Shape2DView001
  70
     0
  62
@@ -707,23 +707,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
-0
+3
  20
--6
+23.6667
  30
 0
  11
-15
+3
  21
--6
+18.5
  31
 0
   0
-LINE
+ARC
   5
 A09
 330
@@ -731,20 +731,22 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
-AcDbLine
+AcDbCircle
  10
-0
+2
  20
--6
+18.5
  30
 0
- 11
-0
- 21
--2.5
- 31
+ 40
+1
+100
+AcDbArc
+ 50
+-90
+ 51
 0
   0
 LINE
@@ -755,19 +757,19 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
-15
+3
  20
--6
+23.6667
  30
 0
  11
-15
+0
  21
--2.5
+23.6667
  31
 0
   0
@@ -779,23 +781,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
--3
+-32
  20
--2.5
+17.5
  30
 0
  11
-0
+2
  21
--2.5
+17.5
  31
 0
   0
-LINE
+ARC
   5
 A0C
 330
@@ -803,21 +805,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
-AcDbLine
+AcDbCircle
  10
-18
+-32
  20
--2.5
+18.5
  30
 0
- 11
-15
- 21
--2.5
- 31
-0
+ 40
+1
+100
+AcDbArc
+ 50
+180
+ 51
+-90
   0
 LINE
   5
@@ -827,23 +831,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
--3
+-33
  20
--2.5
+183
  30
 0
  11
--3
+-33
  21
-2.5
+18.5
  31
 0
   0
-LINE
+ARC
   5
 A0E
 330
@@ -851,21 +855,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
-AcDbLine
+AcDbCircle
  10
-0
+-32
  20
-6
+183
  30
 0
- 11
-15
- 21
-6
- 31
-0
+ 40
+1
+100
+AcDbArc
+ 50
+90
+ 51
+180
   0
 LINE
   5
@@ -875,19 +881,19 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
-0
+2
  20
-2.5
+184
  30
 0
  11
-0
+-32
  21
-6
+184
  31
 0
   0
@@ -899,23 +905,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
-15
+0
  20
-2.5
+177.833
  30
 0
  11
-15
+0
  21
-6
+23.6667
  31
 0
   0
-LINE
+ARC
   5
 A11
 330
@@ -923,21 +929,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
-AcDbLine
+AcDbCircle
  10
--3
+2
  20
-2.5
+183
  30
 0
- 11
+ 40
+1
+100
+AcDbArc
+ 50
 0
- 21
-2.5
- 31
-0
+ 51
+90
   0
 LINE
   5
@@ -947,19 +955,19 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
-18
+0
  20
-2.5
+177.833
  30
 0
  11
-15
+3
  21
-2.5
+177.833
  31
 0
   0
@@ -971,23 +979,23 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
 AcDbLine
  10
-18
+3
  20
--2.5
+183
  30
 0
  11
-18
+3
  21
-2.5
+177.833
  31
 0
   0
-CIRCLE
+LINE
   5
 A14
 330
@@ -995,15 +1003,285 @@ A02
 100
 AcDbEntity
   8
-Shape2DView
+Shape2DView001
 100
-AcDbCircle
+AcDbLine
  10
-7.5
+-15
  20
--4.3897e-16
- 40
-2.5
+88.8571
+ 30
+0
+ 11
+-15
+ 21
+112.643
+ 31
+0
+  0
+LINE
+  5
+A15
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-18
+ 20
+88.8571
+ 30
+0
+ 11
+-15
+ 21
+88.8571
+ 31
+0
+  0
+LINE
+  5
+A16
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-18
+ 20
+112.643
+ 30
+0
+ 11
+-18
+ 21
+88.8571
+ 31
+0
+  0
+LINE
+  5
+A17
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-15
+ 20
+112.643
+ 30
+0
+ 11
+-18
+ 21
+112.643
+ 31
+0
+  0
+LINE
+  5
+A18
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-15
+ 20
+136.429
+ 30
+0
+ 11
+-15
+ 21
+160.214
+ 31
+0
+  0
+LINE
+  5
+A19
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-18
+ 20
+136.429
+ 30
+0
+ 11
+-15
+ 21
+136.429
+ 31
+0
+  0
+LINE
+  5
+A1A
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-18
+ 20
+160.214
+ 30
+0
+ 11
+-18
+ 21
+136.429
+ 31
+0
+  0
+LINE
+  5
+A1B
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-15
+ 20
+160.214
+ 30
+0
+ 11
+-18
+ 21
+160.214
+ 31
+0
+  0
+LINE
+  5
+A1C
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-15
+ 20
+41.2857
+ 30
+0
+ 11
+-15
+ 21
+65.0714
+ 31
+0
+  0
+LINE
+  5
+A1D
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-18
+ 20
+41.2857
+ 30
+0
+ 11
+-15
+ 21
+41.2857
+ 31
+0
+  0
+LINE
+  5
+A1E
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-18
+ 20
+65.0714
+ 30
+0
+ 11
+-18
+ 21
+41.2857
+ 31
+0
+  0
+LINE
+  5
+A1F
+330
+A02
+100
+AcDbEntity
+  8
+Shape2DView001
+100
+AcDbLine
+ 10
+-15
+ 20
+65.0714
+ 30
+0
+ 11
+-18
+ 21
+65.0714
+ 31
+0
   0
 ENDSEC
   0
