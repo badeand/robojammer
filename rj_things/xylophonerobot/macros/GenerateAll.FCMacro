@@ -1,4 +1,16 @@
-
+ 
+def ExportFullAssembly():
+	__objs__=[]
+	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Link"))
+	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Body003"))
+	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Link001"))
+	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Link002"))
+	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Body004"))
+	import importOBJ
+	import Mesh
+	importOBJ.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot/output/full_assembly.obj")	
+	Mesh.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot/output/full_assembly.stl")
+	del __objs__
 
 
 def ExportDXF(shape, filename):
@@ -9,12 +21,20 @@ def ExportDXF(shape, filename):
 	importDXF.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot/output/"+filename+".dxf")
 	del __objs__
 
+
+def ExportPage(pagename, filename):
+	__objs__=[]
+	__objs__.append(FreeCAD.getDocument("xylophonerobot").getObject("Page001"))
+	import TechDrawGui
+	TechDrawGui.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot/output/"+filename+".svg")
+	del __objs__
+	Gui.Selection.clearSelection()
+
 ExportDXF("Shape2DView", "backplate")
 ExportDXF("Shape2DView001", "divider")
 ExportDXF("Shape2DView002", "bottom")
 ExportDXF("Shape2DView003", "top")
 ExportDXF("Shape2DView004", "frontplate")
-
-
-
+ExportFullAssembly()
+ExportPage('Page001', 'top_dividers_bottom')
 
