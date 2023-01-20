@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+
+# Macro Begin: /Users/badeand/dev/robojammer/rj_things/xylophonerobot_2/macros/export dxf.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
+import FreeCAD
+import importDXF
+
+# Gui.runCommand('Std_DlgMacroRecord',0)
+### Begin command Std_Export
+__objs__=[]
+__objs__.append(FreeCAD.getDocument("xylophonerobot_2").getObject("Shape2DView"))
+importDXF.export(__objs__,u"/Users/badeand/dev/robojammer/rj_things/xylophonerobot_2/output/dxf/front.dxf")
+
+del __objs__
+### End command Std_Export
+# Macro End: /Users/badeand/dev/robojammer/rj_things/xylophonerobot_2/macros/export dxf.FCMacro +++++++++++++++++++++++++++++++++++++++++++++++++
