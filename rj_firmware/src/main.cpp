@@ -7,6 +7,7 @@
 #define SOL_5_PIN 6
 #define SOL_6_PIN 7
 #define SOL_7_PIN 8
+#define SOL_8_PIN 9
 #define DEBUG 0
 
 int sol_wait = 6;
@@ -39,7 +40,7 @@ void setup()
   pinMode(SOL_5_PIN, OUTPUT);
   pinMode(SOL_6_PIN, OUTPUT);
   pinMode(SOL_7_PIN, OUTPUT);
-
+  pinMode(SOL_8_PIN, OUTPUT);
 }
 
 // First parameter is the event type (0x0B = control change).
@@ -179,6 +180,16 @@ void loop()
             digitalWrite(SOL_7_PIN, HIGH);
             delay(sol_wait);
             digitalWrite(SOL_7_PIN, LOW);
+          }
+        }
+        if (note == 72)
+        {
+          Serial.println("sol 8");
+          if (velocity > 0)
+          {
+            digitalWrite(SOL_8_PIN, HIGH);
+            delay(sol_wait);
+            digitalWrite(SOL_8_PIN, LOW);
           }
         }
       }
