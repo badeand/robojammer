@@ -8,7 +8,7 @@
 #define SOL_6_PIN 7
 #define SOL_7_PIN 8
 #define SOL_8_PIN 9
-#define DEBUG 0
+#define DEBUG 1
 
 int sol_wait = 6;
 
@@ -80,7 +80,9 @@ void loop()
       {
 
         int note = rx.byte2;
+        int div = (note % 12);
         int velocity = rx.byte3;
+        
 
         if (velocity > 100)
         {
@@ -102,11 +104,13 @@ void loop()
 
           Serial.print("note: ");
           Serial.println(note);
+          Serial.print("div: ");
+          Serial.println(div);
           Serial.print("velocity: ");
           Serial.println(velocity);
         }
 
-        if (note == 60)
+        if (div == 0)
         {
           Serial.println("sol 1");
           if (velocity > 0)
@@ -117,7 +121,7 @@ void loop()
           }
         }
 
-        if (note == 62)
+        if (div == 2)
         {
           Serial.println("sol 2");
           if (velocity > 0)
@@ -128,7 +132,7 @@ void loop()
           }
         }
 
-        if (note == 64)
+        if (div == 4)
         {
           Serial.println("sol 3");
           if (velocity > 0)
@@ -139,7 +143,7 @@ void loop()
           }
         }
 
-        if (note == 65)
+        if (div == 5)
         {
           Serial.println("sol 4");
           if (velocity > 0)
@@ -150,7 +154,7 @@ void loop()
           }
         }
 
-        if (note == 67)
+        if (div == 7)
         {
           Serial.println("sol 5");
           if (velocity > 0)
@@ -161,7 +165,7 @@ void loop()
           }
         }
 
-        if (note == 69)
+        if (div == 9)
         {
           Serial.println("sol 6");
           if (velocity > 0)
@@ -172,7 +176,7 @@ void loop()
           }
         }
 
-        if (note == 71)
+        if (div == 11)
         {
           Serial.println("sol 7");
           if (velocity > 0)
@@ -182,7 +186,7 @@ void loop()
             digitalWrite(SOL_7_PIN, LOW);
           }
         }
-        if (note == 72)
+        if (div == 12)
         {
           Serial.println("sol 8");
           if (velocity > 0)
