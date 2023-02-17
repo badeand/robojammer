@@ -8,7 +8,26 @@
 #define SOL_6_PIN 7
 #define SOL_7_PIN 8
 #define SOL_8_PIN 9
-#define DEBUG 1
+#define DEBUG 0
+
+int lastNote = -1;
+int c = -1;
+
+int divToPin[] = {
+    SOL_1_PIN,
+    -1,
+    SOL_2_PIN,
+    -1,
+    SOL_3_PIN,
+    SOL_4_PIN,
+    -1,
+    SOL_5_PIN,
+    -1,
+    SOL_6_PIN,
+    -1,
+    SOL_7_PIN,
+    SOL_8_PIN,
+};
 
 // First parameter is the event type (0x09 = note on, 0x08 = note off).
 // Second parameter is note-on/note-off, combined with the channel.
@@ -73,117 +92,75 @@ void loop()
       }
 
       int header = rx.header;
+      int velocity = rx.byte3;
 
-      if (header == 9)
+      if (header == 11)
+      {
+
+        int value = rx.byte3;
+        int number = rx.byte2;
+        if (DEBUG)
+        {
+          Serial.print("CTL IN");
+          Serial.print(", number: ");
+          Serial.print(number);
+          Serial.print(", value: ");
+          Serial.print(value);
+          Serial.println();
+        }
+      }
+
+      if (header == 9 && velocity > 0)
       {
 
         int note = rx.byte2;
         int div = (note % 12);
-        int velocity = rx.byte3;
+        int solPin = divToPin[div];
 
-        int sol_wait = 0;
+        if (div == 0 && lastNote > 0)
+        {
+          if (lastNote != note)
+          {
+            if (lastNote > note)
+            {
+              c = divToPin[0];
+            }
+            if (lastNote < note)
+            {
+              c = divToPin[12];
+            }
+            solPin = c;
+          }
+          else
+          {
+            solPin = c;
+          }
+        }
 
-        sol_wait = map(velocity, 0, 127, 0, 10);
+        int sol_wait = map(velocity, 0, 127, 4800, 6000);
 
         if (DEBUG)
         {
-          Serial.print("sol wait");
-          Serial.println(sol_wait);
-
-          Serial.print("note: ");
-          Serial.println(note);
-          Serial.print("div: ");
-          Serial.println(div);
-          Serial.print("velocity: ");
-          Serial.println(velocity);
+          Serial.print("sol wait: ");
+          Serial.print(sol_wait);
+          Serial.print(", note: ");
+          Serial.print(note);
+          Serial.print(", div: ");
+          Serial.print(div);
+          Serial.print(", velocity: ");
+          Serial.print(velocity);
+          Serial.print(", solPin=");
+          Serial.println(solPin);
         }
 
-        if (div == 0)
+        if (solPin > 0 && velocity > 0)
         {
-          Serial.println("sol 1");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_1_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_1_PIN, LOW);
-          }
+          digitalWrite(solPin, HIGH);
+          delayMicroseconds(sol_wait);
+          digitalWrite(solPin, LOW);
         }
 
-        if (div == 2)
-        {
-          Serial.println("sol 2");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_2_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_2_PIN, LOW);
-          }
-        }
-
-        if (div == 4)
-        {
-          Serial.println("sol 3");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_3_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_3_PIN, LOW);
-          }
-        }
-
-        if (div == 5)
-        {
-          Serial.println("sol 4");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_4_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_4_PIN, LOW);
-          }
-        }
-
-        if (div == 7)
-        {
-          Serial.println("sol 5");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_5_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_5_PIN, LOW);
-          }
-        }
-
-        if (div == 9)
-        {
-          Serial.println("sol 6");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_6_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_6_PIN, LOW);
-          }
-        }
-
-        if (div == 11)
-        {
-          Serial.println("sol 7");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_7_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_7_PIN, LOW);
-          }
-        }
-        if (div == 12)
-        {
-          Serial.println("sol 8");
-          if (velocity > 0)
-          {
-            digitalWrite(SOL_8_PIN, HIGH);
-            delay(sol_wait);
-            digitalWrite(SOL_8_PIN, LOW);
-          }
-        }
+        lastNote = note;
       }
     }
   } while (rx.header != 0);
