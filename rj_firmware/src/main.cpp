@@ -10,8 +10,6 @@
 #define SOL_8_PIN 9
 #define DEBUG 1
 
-int sol_wait = 6;
-
 // First parameter is the event type (0x09 = note on, 0x08 = note off).
 // Second parameter is note-on/note-off, combined with the channel.
 // Channel can be anything between 0-15. Typically reported to the user as 1-16.
@@ -82,25 +80,15 @@ void loop()
         int note = rx.byte2;
         int div = (note % 12);
         int velocity = rx.byte3;
-        
 
-        if (velocity > 100)
-        {
-          sol_wait = 8;
-        }
-        else if (velocity > 80)
-        {
-          sol_wait = 7;
-        }
-        else if (velocity > 50)
-        {
-          sol_wait = 5;
-        }
+        int sol_wait = 0;
+
+        sol_wait = map(velocity, 0, 127, 0, 10);
 
         if (DEBUG)
         {
           Serial.print("sol wait");
-          Serial.println(sol_wait, DEC);
+          Serial.println(sol_wait);
 
           Serial.print("note: ");
           Serial.println(note);
