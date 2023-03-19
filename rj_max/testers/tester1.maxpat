@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1714.0, 87.0, 1612.0, 1769.0 ],
+		"rect" : [ 82.0, 100.0, 1612.0, 983.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,42 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-48",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 741.5, 157.0, 29.5, 22.0 ],
+					"text" : "400"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-43",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 708.5, 157.0, 29.5, 22.0 ],
+					"text" : "64"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-40",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 674.0, 157.0, 29.5, 22.0 ],
+					"text" : "10"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-66",
 					"maxclass" : "message",
@@ -188,7 +224,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 160.500010788440704, 835.0, 50.0, 22.0 ],
-					"text" : "69 22"
+					"text" : "69 127"
 				}
 
 			}
@@ -1130,6 +1166,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
 					"source" : [ "obj-41", 1 ]
 				}
@@ -1147,6 +1190,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
 					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"source" : [ "obj-43", 0 ]
 				}
 
 			}
@@ -1187,6 +1237,13 @@
 					"destination" : [ "obj-45", 0 ],
 					"midpoints" : [ 886.5, 471.0, 859.0, 471.0, 859.0, 313.0, 837.5, 313.0 ],
 					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"source" : [ "obj-48", 0 ]
 				}
 
 			}
@@ -1439,7 +1496,59 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [  ],
+		"dependency_cache" : [ 			{
+				"name" : "button.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "counter.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "kslider.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "line.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "live.dial.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "message.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "metro.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "number.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "prepend.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "scale.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "slider.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "toggle.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "zl.mxo",
+				"type" : "iLaX"
+			}
+ ],
 		"autosave" : 0
 	}
 
