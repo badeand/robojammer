@@ -1697,7 +1697,7 @@
     (property "Value" "Barrel_Jack" (at 115.57 25.4 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector Barrel Jack - Community:BarrelJack_GCT_DCJ200-10-A_Horizontal" (at 116.84 31.496 0)
+    (property "Footprint" "Connector Barrel Jack - Community:BarrelJack_Wuerth_6941xx301002" (at 116.84 31.496 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (at 116.84 31.496 0)
