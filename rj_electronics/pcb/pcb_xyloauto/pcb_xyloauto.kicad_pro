@@ -504,7 +504,7 @@
       "netlist": "",
       "specctra_dsn": "",
       "step": "pcb_xyloauto.step",
-      "vrml": ""
+      "vrml": "pcb_xyloauto.wrl"
     },
     "page_layout_descr_file": ""
   },
