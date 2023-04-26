@@ -1663,7 +1663,7 @@
 
   (footprint "Potentiometer_THT:Potentiometer_Bourns_3299W_Vertical" (layer "F.Cu")
     (tstamp a88c92d3-1a45-4cd0-bc7d-3c85f47565a8)
-    (at 55.5493 133.9441 180)
+    (at 53.68348 138.003745 180)
     (descr "Potentiometer, vertical, Bourns 3299W, https://www.bourns.com/pdfs/3299.pdf")
     (tags "Potentiometer vertical Bourns 3299W")
     (property "Sheetfile" "pcb_xyloauto.kicad_sch")
@@ -1672,7 +1672,7 @@
     (property "ki_keywords" "resistor variable trimpot trimmer")
     (path "/a516be24-3b8b-4105-8a5f-e1a17bbe4aa6")
     (attr through_hole)
-    (fp_text reference "RV1" (at -2.54 -3.16 180) (layer "F.SilkS")
+    (fp_text reference "RV1" (at -3.49139 2.777399 180) (layer "F.SilkS")
         (effects (font (size 1 1) (thickness 0.15)))
       (tstamp be27f3ee-cb69-448d-9435-97d023b7da36)
     )
