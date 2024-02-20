@@ -314,15 +314,10 @@
       (net 2 "GND") (pinfunction "GND") (pintype "power_in") (tstamp 2866fd38-60a2-4ddb-8742-c501cc0efa1f))
     (pad "24" thru_hole oval (at 0 27.94 270) (size 1.6 1.6) (drill 0.8) (layers "*.Cu" "*.Mask")
       (net 31 "unconnected-(U1-RAW-Pad24)") (pinfunction "RAW") (pintype "power_in") (tstamp 6f11a592-6223-42ff-84d0-bb4c8eb32e7f))
-    (model "${KISYS3DMOD}/Module.3dshapes/Arduino_Nano_WithMountingHoles.wrl"
-      (offset (xyz 0 0 0))
+    (model "/Users/badeand/dev/robojammer/resources/Arduino Pro Micro step model/ARDUINO PRO MICRO.STEP"
+      (offset (xyz 15.5 -28 4))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model "${LOCALREPO}/kicad-lib-arduino/Arduino.3dshapes/sparkfun_pro_micro.x3d"
-      (offset (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
+      (rotate (xyz -90 0 -90))
     )
   )
 
